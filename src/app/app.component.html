@@ -1,5 +1,9 @@
 <h1 class="bg-primary">{{title}}</h1>
-<app-todo></app-todo>
+<p *ngIf="showMsg" [ngStyle]='{color:colorName}'> This is true </p>
+
+
+
+<!-- <app-todo></app-todo> -->
   <router-outlet></router-outlet>
 
-//kavin
+<!-- //kavin -->
