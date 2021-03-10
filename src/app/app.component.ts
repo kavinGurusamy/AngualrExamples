@@ -9,4 +9,6 @@ export class AppComponent {
   title = 'first';
   showMsg=true;
   colorName='green';
+  ifMsg=true;
+  swithvalue=1;
 }

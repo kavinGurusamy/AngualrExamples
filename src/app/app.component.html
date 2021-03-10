@@ -1,9 +1,40 @@
 <h1 class="bg-primary">{{title}}</h1>
 <p *ngIf="showMsg" [ngStyle]='{color:colorName}'> This is true </p>
+<br>
+<div *ngIf="ifMsg; else elseBlock">Show message</div><br>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+<!-- --------------------------------------------------------------------------- -->
+
+
+<!-- if true excute then statement excutes others else -->
+<div *ngIf="ifMsg;then thenBlock else elseBlock">Show message</div><br>
+
+<ng-template #thenBlock>Show thenBlock</ng-template>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+<!-- <app-todo></app-todo> // selectors used to display the rendered html anywhere -->
+<div [ngSwitch]="swithvalue">
+  <div *ngSwitchCase="1"  > value given is one</div>
+</div>
 
 
 
-<!-- <app-todo></app-todo> -->
-  <router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>
 
 <!-- //kavin -->
