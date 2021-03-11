@@ -35,4 +35,5 @@ export class AppComponent {
   highLightByColor() {
     console.log('High lighted');
   }
+  username = '';
 }
