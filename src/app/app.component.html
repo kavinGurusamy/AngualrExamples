@@ -1,40 +1,71 @@
-<h1 class="bg-primary">{{title}}</h1>
-<p *ngIf="showMsg" [ngStyle]='{color:colorName}'> This is true </p>
-<br>
-<div *ngIf="ifMsg; else elseBlock">Show message</div><br>
+<h1 class="bg-primary">{{ title }}</h1>
+<p *ngIf="showMsg" [ngStyle]="{ color: colorName }">This is true</p>
+<br />
+<div *ngIf="ifMsg; else elseBlock">Show message</div>
+<br />
 <ng-template #elseBlock>Content to render when condition is false.</ng-template>
 
 <!-- --------------------------------------------------------------------------- -->
 
-
 <!-- if true excute then statement excutes others else -->
-<div *ngIf="ifMsg;then thenBlock else elseBlock">Show message</div><br>
 
-<ng-template #thenBlock>Show thenBlock</ng-template>
+<div *ngIf="ifMsg; then thenBlock; else elseBlock">Show messagejhhjgyg</div>
+
+<br />
+
+<ng-template #thenBlock><p>Show thenBlock</p></ng-template>
 <ng-template #elseBlock>Content to render when condition is false.</ng-template>
 
 <!-- <app-todo></app-todo> // selectors used to display the rendered html anywhere -->
+
+<!-- switch like regualr switch  -->
 <div [ngSwitch]="swithvalue">
-  <div *ngSwitchCase="1"  > value given is one</div>
+  <div *ngSwitchCase="1">value given is one</div>
+  <div *ngSwitchDefault>This is default</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- for loop -->
+<ul>
+  <!-- for(i=j;i<0;i--) -->
+  <li *ngFor="let contact of contacts; index as i; first as f; last as l">
+    <div *ngIf="f">this is first record</div>
+    {{ i }} {{ contact.firstName }} {{ contact.lastName }}
+    <div *ngIf="l">this is last record</div>
+  </li>
+</ul>
+<ul>
+  <!-- for(i=j;i<0;i--) -->
+  <li *ngFor="let contact of contacts; index as i">
+    <div *ngIf="f">this is first record</div>
+    {{ i }} {{ contact.firstName }} {{ contact.lastName }}
+  </li>
+</ul>
+<!-- ngStyle example static and dynamic ways-->
+<div [ngStyle]="{ 'background-color': 'green' }">Ram</div>
+<div [ngStyle]="{ 'background-color': StyleColor }">This is dynamic color</div>
+<div [ngClass]="'c1'">This is ng class</div>
+<div [ngClass]="colorFromCss">Using double quotes for ts classes</div>
+<!-- interploation -->
+<div>{{ userObject.firstname }} {{ userObject.lastname }}</div>
+<table>
+  <tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+  </tr>
+  <tr *ngFor="let name of contacts">
+    <td>{{ name.firstName }}</td>
+    <td>{{ name.lastName }}</td>
+  </tr>
+</table>
+<!-- Attribute bindings -->
+<table style="background: #dddd">
+  <tr>
+    <th>FirstName</th>
+    <th>LastName</th>
+  </tr>
+  <tr>
+    <!-- <th [colspan]="colVal">FirstName</th>  thows error-->
+    <th [attr.colspan]="colVal">FirstName</th>
+    <th>LastName</th>
+  </tr>
+</table>
 <router-outlet></router-outlet>
-
-<!-- //kavin -->
