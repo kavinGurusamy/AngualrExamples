@@ -63,9 +63,14 @@
     <th>LastName</th>
   </tr>
   <tr>
-    <!-- <th [colspan]="colVal">FirstName</th>  thows error-->
+    <!-- <th [colspan]="colVal">FirstName</th>  thows error cannot identify property-->
     <th [attr.colspan]="colVal">FirstName</th>
     <th>LastName</th>
   </tr>
 </table>
+<!-- attribute binding -->
+<button (click)="SayHello()">Click to say hello</button>
+
+<!-- event binding==> when move mouse over the text event is trigged -->
+<div (mouseover)="highLightByColor()">High the text</div>
 <router-outlet></router-outlet>

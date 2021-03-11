@@ -29,4 +29,10 @@ export class AppComponent {
   colorFromCss = 'c2'; //css class name from css
   userObject = { firstname: 'Kavin', lastname: 'G' };
   colVal = 2;
+  SayHello() {
+    console.log('hello from app.component.html');
+  }
+  highLightByColor() {
+    console.log('High lighted');
+  }
 }
